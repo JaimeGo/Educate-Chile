@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Questions:</strong>
+  <%= @project_connection.questions %>
+</p>
+
+<p>
+  <strong>Answers:</strong>
+  <%= @project_connection.answers %>
+</p>
+
+<%= link_to 'Edit', edit_project_connection_path(@project_connection) %> |
+<%= link_to 'Back', project_connections_path %>
