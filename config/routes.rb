@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :project_communications
+  resources :project_evaluations
+  resources :project_implementations
+  resources :project_connections
   resources :methodology_reviews
   resources :methodologies
   resources :project_reviews

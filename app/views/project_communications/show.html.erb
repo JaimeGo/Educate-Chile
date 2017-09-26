@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Questions:</strong>
+  <%= @project_communication.questions %>
+</p>
+
+<p>
+  <strong>Answers:</strong>
+  <%= @project_communication.answers %>
+</p>
+
+<%= link_to 'Edit', edit_project_communication_path(@project_communication) %> |
+<%= link_to 'Back', project_communications_path %>
