@@ -1,5 +1,5 @@
 class ProjectEvaluation < ApplicationRecord
-    belongs_to: project
+    belongs_to :project
 
     def evaluate(comment)
     end
