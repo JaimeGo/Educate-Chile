@@ -1,5 +1,5 @@
 class ProjectImplementation < ApplicationRecord
-    belongs_to: project
+    belongs_to :project
 
     def ask(comment)
     end
