@@ -1,0 +1,30 @@
+Implementar
+	P1:
+		Metodología/s seleccionada/s:
+	P2:
+		Nombre de la iniciativa que vas a emprender
+	P3:
+		Objetivo de la iniciativa que vas a emprender (utiliza los argumentos del Seleccionador para construir esta sección)
+	P4:
+		¿Dónde se va a implementar?
+	P5:
+		Periodo de la implementación (identifica frecuencia y fechas de inicio y cierre)
+	P6:
+		Equipo de trabajo (personas involucradas en el proyecto con descripción de roles, incluyendo un responsable de la iniciativa)
+
+	P7: RECURSOS FÍSICOS Y FINANCIEROS
+		Tabla:
+			Ítem	Disponible	¿Como podemos obtener este recurso?
+								 (ideas de posibles actividades
+								y alianzas que apoyen el proyecto)
+
+	P8: Otras condiciones necesarias
+		(autorizaciones, ajuste de horarios, disponibilidad de espacios, entre otros)
+		
+		Tabla:
+			Item	¿Cómo podemos favorecer las condiciones?
+					(propuestas de ajustes que faciliten el proyecto)
+
+	P9: INSTANCIA DE DIFUSIÓN
+		Tabla:
+		

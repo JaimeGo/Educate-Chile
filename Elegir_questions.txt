@@ -1,0 +1,12 @@
+Elegir
+	P1: SELECCIONADOR DE METODOLOGÍAS
+			Metodología Comentarios	generales Utilidad Pertinencia Relevancia PUNTOS
+	P2:
+		Decisión: Vamos a implementar...
+
+	P3(A,B,C):
+		Porque… (incluye tres argumentos que tengan sentido para tu
+		comunidad educativa. Este paso te será útil para fundamentar tu
+		decisión ante el equipo)
+
+	rails generate scaffold Project_Choice desicion:text porqueA:string porqueB:string porqueC:string
