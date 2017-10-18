@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'static_pages/home'
+
   resources :project_communications
   resources :project_evaluations
   resources :project_implementations
