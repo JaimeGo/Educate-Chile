@@ -12,8 +12,9 @@ Rails.application.routes.draw do
     resources :project_reviews
   end
 
-  resources :methodology_reviews
-  resources :methodologies
+  resources :methodologies do
+    resources :methodology_reviews
+  end
   resources :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
