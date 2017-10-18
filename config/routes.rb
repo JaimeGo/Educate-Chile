@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  devise_for :users
-  root 'home#index'
+  root 'users#new'
 
+  devise_for :users, controllers: { registrations: "registrations" }
 
   resources :projects do
     resources :project_communications
@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :project_connections
     resources :project_reviews
   end
-  
+
   resources :methodology_reviews
   resources :methodologies
   resources :users
