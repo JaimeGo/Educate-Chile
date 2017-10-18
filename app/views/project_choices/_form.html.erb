@@ -1,0 +1,37 @@
+<%= form_with(model: project_choice, local: true) do |form| %>
+  <% if project_choice.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(project_choice.errors.count, "error") %> prohibited this project_choice from being saved:</h2>
+
+      <ul>
+      <% project_choice.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :desicion %>
+    <%= form.text_area :desicion, id: :project_choice_desicion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :porqueA %>
+    <%= form.text_field :porqueA, id: :project_choice_porqueA %>
+  </div>
+
+  <div class="field">
+    <%= form.label :porqueB %>
+    <%= form.text_field :porqueB, id: :project_choice_porqueB %>
+  </div>
+
+  <div class="field">
+    <%= form.label :porqueC %>
+    <%= form.text_field :porqueC, id: :project_choice_porqueC %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

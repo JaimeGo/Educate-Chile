@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :project_choices
   resources :project_communications
   resources :project_evaluations
   resources :project_implementations

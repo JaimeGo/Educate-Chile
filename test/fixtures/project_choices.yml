@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  desicion: MyText
+  porqueA: MyString
+  porqueB: MyString
+  porqueC: MyString
+
+two:
+  desicion: MyText
+  porqueA: MyString
+  porqueB: MyString
+  porqueC: MyString
