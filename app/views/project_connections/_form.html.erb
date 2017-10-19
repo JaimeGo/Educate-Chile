@@ -12,13 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :questions %>
-    <%= form.text_field :questions, id: :project_connection_questions %>
+    <%= form.label :needs %>
+    <%= form.text_field :needs, id: :project_connection_needs %>
   </div>
 
   <div class="field">
-    <%= form.label :answers %>
-    <%= form.text_field :answers, id: :project_connection_answers %>
+    <%= form.label :methodologies %>
+    <%= form.check_box :methodologies, Methodology.order(:name).map{|x| [x.name, x.id]} %>
   </div>
 
   <div class="actions">
