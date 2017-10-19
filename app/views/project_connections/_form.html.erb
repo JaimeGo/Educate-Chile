@@ -1,15 +1,4 @@
-<%= form_with(model: project_connection, local: true) do |form| %>
-  <% if project_connection.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(project_connection.errors.count, "error") %> prohibited this project_connection from being saved:</h2>
-
-      <ul>
-      <% project_connection.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_for([@project, @project.build_project_connection]) do |form| %>
 
   <div class="field">
     <%= form.label :needs %>
@@ -18,7 +7,7 @@
 
   <div class="field">
     <%= form.label :methodologies %>
-    <%= form.check_box :methodologies, Methodology.order(:name).map{|x| [x.name, x.id]} %>
+    <%= form.check_box :methodologies, Methodology.all.map { |m| [m.name, "#{m.id}"] }%>
   </div>
 
   <div class="actions">

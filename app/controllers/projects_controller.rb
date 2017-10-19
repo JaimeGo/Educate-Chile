@@ -28,7 +28,7 @@ class ProjectsController < ApplicationController
     @project = @user.projects.build(project_params)
     @project.save
 
-    redirect_to projects_path
+    redirect_to new_project_project_connection_path(@project)
   end
 
   # PATCH/PUT /projects/1
