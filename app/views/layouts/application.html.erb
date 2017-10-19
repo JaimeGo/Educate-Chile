@@ -6,10 +6,20 @@
     <%= render 'layouts/shim' %>
   </head>
   <body>
+
     <%= render 'layouts/header' %>
     <div class="container">
       <%= yield %>
       <%= render 'layouts/footer' %>
     </div>
+
+    <% if user_signed_in? %>
+      <p>
+        ¡Hola <%= current_user.last_name %>! -
+        <%= link_to "Sign_out", destroy_user_session_path, method: :delete %>
+        <br>
+      </p>
+    <% end %>
+    <%= yield %>
   </body>
 </html>

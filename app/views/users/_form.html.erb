@@ -11,10 +11,6 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :username %>
-    <%= form.text_field :username, id: :user_username %>
-  </div>
 
   <div class="field">
     <%= form.label :name %>
@@ -28,8 +24,21 @@
 
   <div class="field">
     <%= form.label :password %>
-    <%= form.text_field :password, id: :user_password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= form.password_field :password, autocomplete: "off", id: :user_password %>
   </div>
+
+  <div class="field">
+    <%= form.label :password_confirmation %><br />
+    <%= form.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <!-- <div class="field">
+    <%= form.label :password %>
+    <%= form.text_field :password, id: :user_password %>
+  </div> -->
 
   <div class="field">
     <%= form.label :email %>

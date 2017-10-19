@@ -1,17 +1,7 @@
-<h1>New User</h1>
+<h2>Sign up</h2>
 
-<%= form_with(model: @user, local: true) do |f| %>
-
-
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name, id: :user_name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name, id: :user_last_name %>
-  </div>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
 
   <div class="field">
     <%= f.label :email %><br />
@@ -35,3 +25,5 @@
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
+
+<%= render "devise/shared/links" %>
