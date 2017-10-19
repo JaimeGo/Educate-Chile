@@ -1,6 +1,7 @@
 class ProjectConnection < ApplicationRecord
     belongs_to :project
+    has_many   :methodology_evaluations, dependent: :destroy
 
-    def request_connection()
-    end
+    accepts_nested_attributes_for :methodology_evaluations,
+                                  allow_destroy: true
 end

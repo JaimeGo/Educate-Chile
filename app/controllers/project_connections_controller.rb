@@ -15,6 +15,8 @@ class ProjectConnectionsController < ApplicationController
   # GET /project_connections/new
   def new
     @project = Project.find(params[:project_id])
+    @project_connection = ProjectConnection.new
+    @project_connection.methodology_evaluations.build
   end
 
   # GET /project_connections/1/edit
@@ -26,6 +28,7 @@ class ProjectConnectionsController < ApplicationController
   def create
     @project = Project.find(params[:project_id])
     @project_connection = @project.build_project_connection(project_connection_params)
+    @project_connection.methodology_evaluations.build
 
     respond_to do |format|
       if @project_connection.save
@@ -70,6 +73,7 @@ class ProjectConnectionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_connection_params
-      params.require(:project_connection).permit(:questions, :answers)
+      params.require(:project_connection).permit(
+        :needs, methodology_evaluations_attributes: MethodologyEvaluation.attribute_names.map(&:to_sym))
     end
 end

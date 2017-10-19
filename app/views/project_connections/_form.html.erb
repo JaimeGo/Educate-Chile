@@ -1,11 +1,28 @@
-<%= form_for([@project, @project.build_project_connection]) do |form| %>
+<%= simple_form_for([@project, @project.build_project_connection]) do |form| %>
 
   <div class="field">
     <%= form.label :needs %>
     <%= form.text_field :needs, id: :project_connection_needs %>
   </div>
 
-
+  <h3> Metodologías </h3>
+    <table class='table'>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Metodología</th>
+          <th>Comentarios</th>
+          <th>Utilidad</th>
+          <th>Pertinencia</th>
+          <th>Relevancia</th>
+        </tr>
+      </thead>
+      <tbody class='fields'>
+        <%= form.simple_fields_for :methodology_evaluation do |builder| %>
+          <%= render 'methodology_evaluation', f: builder %>
+        <% end %>
+      </tbody>
+    </table>
 
   <div class="actions">
     <%= form.submit %>
