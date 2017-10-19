@@ -14,7 +14,7 @@ class ProjectConnectionsController < ApplicationController
 
   # GET /project_connections/new
   def new
-    @project_connection = ProjectConnection.new
+    @project = Project.find(params[:project_id])
   end
 
   # GET /project_connections/1/edit
@@ -24,11 +24,12 @@ class ProjectConnectionsController < ApplicationController
   # POST /project_connections
   # POST /project_connections.json
   def create
-    @project_connection = ProjectConnection.new(project_connection_params)
+    @project = Project.find(params[:project_id])
+    @project_connection = @project.build_project_connection(project_connection_params)
 
     respond_to do |format|
       if @project_connection.save
-        format.html { redirect_to @project_connection, notice: 'Project connection was successfully created.' }
+        format.html { redirect_to current_user, notice: 'Project connection was successfully created.' }
         format.json { render :show, status: :created, location: @project_connection }
       else
         format.html { render :new }

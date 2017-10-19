@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171018212002) do
+ActiveRecord::Schema.define(version: 20171019073521) do
 
   create_table "methodologies", force: :cascade do |t|
     t.string "name"
@@ -18,6 +18,19 @@ ActiveRecord::Schema.define(version: 20171018212002) do
     t.string "link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "methodology_evaluations", force: :cascade do |t|
+    t.integer "methodology_id"
+    t.text "reason"
+    t.integer "utility"
+    t.integer "pertinence"
+    t.integer "relevance"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "project_connection_id"
+    t.index ["methodology_id"], name: "index_methodology_evaluations_on_methodology_id"
+    t.index ["project_connection_id"], name: "index_methodology_evaluations_on_project_connection_id"
   end
 
   create_table "methodology_reviews", force: :cascade do |t|
@@ -39,10 +52,12 @@ ActiveRecord::Schema.define(version: 20171018212002) do
   end
 
   create_table "project_connections", force: :cascade do |t|
-    t.string "questions"
-    t.string "answers"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "needs"
+    t.text "ideas"
+    t.integer "project_id"
+    t.index ["project_id"], name: "index_project_connections_on_project_id"
   end
 
   create_table "project_evaluations", force: :cascade do |t|
