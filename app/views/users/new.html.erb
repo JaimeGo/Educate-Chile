@@ -1,37 +1,41 @@
-<h1>New User</h1>
+<div class="wrapper"></div>
+<div class="login">
 
-<%= form_with(model: @user, local: true) do |f| %>
 
+<%= form_with(model: @user, local: true, html: {class: "form-signin"}) do |f| %>
+<h1 class="form-signin-heading">Crear una cuenta</h1>
 
   <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name, id: :user_name %>
+    <%= f.label :name, "Nombre" %>
+    <%= f.text_field :name, id: :user_name, class:"form-control" %>
   </div>
 
   <div class="field">
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name, id: :user_last_name %>
+    <%= f.label :last_name, "Apellido" %>
+    <%= f.text_field :last_name, id: :user_last_name, class: "form-control" %>
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.label :email, "E-Mail" %>
+    <%= f.email_field :email, autofocus: true, class:"form-control" %>
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :password, "Password" %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off", class:"form-control" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.label :password_confirmation, "Confirmar Password" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up", class:"btn btn-lg btn-custom btn-block" %>
   </div>
 <% end %>
+</div>
+</div>
