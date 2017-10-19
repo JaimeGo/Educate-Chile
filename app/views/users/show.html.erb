@@ -3,7 +3,7 @@
 <div class="container-fluid well span6">
     <div class="row-fluid">
           <div class="span2" >
-          <img src="https://secure.gravatar.com/avatar/de9b11d0f9c0569ba917393ed5e5b3ab?s=140&r=g&d=mm" class="img-circle">
+          <%= image_tag gravatar_url(current_user.email, 128), class:"img-circle"%>
           </div>
           
           <div class="span8">
@@ -15,7 +15,7 @@
           
   </div>
   <%= link_to 'Edit', edit_user_path(@user) %> |
-  <%= link_to 'Back', users_path %>
+  <%= link_to 'Back', :back %>
   </div>
   
   </div>
