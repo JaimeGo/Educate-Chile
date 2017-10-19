@@ -5,10 +5,7 @@
     <%= form.text_field :needs, id: :project_connection_needs %>
   </div>
 
-  <div class="field">
-    <%= form.label :methodologies %>
-    <%= form.check_box :methodologies, Methodology.all.map { |m| [m.name, "#{m.id}"] }%>
-  </div>
+
 
   <div class="actions">
     <%= form.submit %>
