@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
   devise_for :users
+  get 'static_pages/home'
 
   resources :projects do
     resources :project_connections do
