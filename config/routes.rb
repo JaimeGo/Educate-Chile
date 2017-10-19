@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-
+  root 'static_pages#home'
+  get 'static_pages/home'
   root 'users#new'
-
   devise_for :users, controllers: { registrations: "registrations" }
-
   resources :projects do
     resources :project_communications
     resources :project_evaluations

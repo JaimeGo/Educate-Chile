@@ -1,14 +1,17 @@
 <!DOCTYPE html>
+<%= stylesheet_link_tag    'application', media: 'all' %>
 <html>
   <head>
-    <title>Dds</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= render 'layouts/shim' %>
   </head>
-
   <body>
+
+    <%= render 'layouts/header' %>
+    <div class="container">
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+    </div>
 
     <% if user_signed_in? %>
       <p>
