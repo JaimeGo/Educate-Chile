@@ -1,17 +1,20 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
-    <div class="container">
-      <%= link_to image_tag("logo.png", size: "240x80", alt: "EducarChile App"), root_path, id: "logo" %>
-      <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Iniciar Sesión",   '#' %></li>
-      </ul>
-      </nav>
-    </div>
-  </header>
-  <br>
-      <nav class="navbar navbar-light bg-faded" style="background-color:#EEEEEE;">
-        <ul class="nav nav-center">
-          <li><%=link_to "Metodologias", '#'%></li>
-          <li><%=link_to "Proyectos", '#'%></li>
+  <div class="container">
+    <%= link_to image_tag("logo.png", size: "240x80", alt: "EducarChile App"), root_path, id: "logo" %>
+    <nav>
+      <% if user_signed_in? %>
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Mi Perfil", current_user %></li>
+          <li><%= link_to "Sign_out", destroy_user_session_path, method: :delete %></li>
         </ul>
-      </nav>
+      <% end %>
+    </nav>
+  </div>
+</header>
+<br>
+<nav class="navbar navbar-light bg-faded" style="background-color:#EEEEEE;">
+  <ul class="nav nav-center">
+    <li><%=link_to "Metodologias", '#'%></li>
+    <li><%=link_to "Proyectos", '#'%></li>
+  </ul>
+</nav>

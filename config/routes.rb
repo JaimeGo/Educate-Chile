@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   root 'static_pages#home'
-  get 'static_pages/home'
-  root 'users#new'
-  devise_for :users, controllers: { registrations: "registrations" }
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
+  devise_for :users
+
   resources :projects do
     resources :project_connections do
       resources :methodology_evaluations
