@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :project_planifications
   root 'static_pages#home'
   get 'static_pages/home'
   root 'users#new'
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
     resources :project_implementations
     resources :project_connections
     resources :project_reviews
+
   end
 
   resources :methodologies do

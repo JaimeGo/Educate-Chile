@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171018212002) do
+ActiveRecord::Schema.define(version: 20171019013941) do
 
   create_table "methodologies", force: :cascade do |t|
     t.string "name"
@@ -45,6 +45,17 @@ ActiveRecord::Schema.define(version: 20171018212002) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "project_diffusions", force: :cascade do |t|
+    t.string "moment"
+    t.text "audience"
+    t.text "channel"
+    t.text "object"
+    t.integer "project_planification_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_planification_id"], name: "index_project_diffusions_on_project_planification_id"
+  end
+
   create_table "project_evaluations", force: :cascade do |t|
     t.string "questions"
     t.string "answers"
@@ -57,6 +68,28 @@ ActiveRecord::Schema.define(version: 20171018212002) do
     t.string "answers"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "project_planifications", force: :cascade do |t|
+    t.string "name"
+    t.string "place"
+    t.datetime "startdate"
+    t.datetime "finishdate"
+    t.integer "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_project_planifications_on_project_id"
+  end
+
+  create_table "project_resources", force: :cascade do |t|
+    t.string "name"
+    t.boolean "disponibility"
+    t.text "comment"
+    t.integer "type"
+    t.integer "project_planification_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_planification_id"], name: "index_project_resources_on_project_planification_id"
   end
 
   create_table "project_reviews", force: :cascade do |t|
