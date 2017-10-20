@@ -1,4 +1,5 @@
 class ProjectConnection < ApplicationRecord
+	
     belongs_to :project
     has_many   :methodology_evaluations, dependent: :destroy
 

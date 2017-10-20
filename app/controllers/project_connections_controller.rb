@@ -17,6 +17,8 @@ class ProjectConnectionsController < ApplicationController
     @project = Project.find(params[:project_id])
     @project_connection = ProjectConnection.new
     @project_connection.methodology_evaluations.build
+
+
   end
 
   # GET /project_connections/1/edit
@@ -26,15 +28,21 @@ class ProjectConnectionsController < ApplicationController
   # POST /project_connections
   # POST /project_connections.json
   def create
+    puts "PARAMS",project_connection_params
     @project = Project.find(params[:project_id])
     @project_connection = @project.build_project_connection(project_connection_params)
-    @project_connection.methodology_evaluations.build
+    @methodology_evaluation=@project_connection.methodology_evaluations.build(project_connection_params[:methodology_evaluations_attributes])
 
+
+    puts @project_connection.inspect
+    puts @methodology_evaluation.inspect
     respond_to do |format|
       if @project_connection.save
+        puts "HECHO"
         format.html { redirect_to current_user, notice: 'Project connection was successfully created.' }
         format.json { render :show, status: :created, location: @project_connection }
       else
+        puts "ERROR"
         format.html { render :new }
         format.json { render json: @project_connection.errors, status: :unprocessable_entity }
       end
@@ -73,7 +81,8 @@ class ProjectConnectionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_connection_params
+      puts "AQUI", [:methodology_id, :reason, :utility,  :pertinence, :relevance]
       params.require(:project_connection).permit(
-        :needs, methodology_evaluations_attributes: MethodologyEvaluation.attribute_names.map(&:to_sym))
+        :needs, :ideas, methodology_evaluation_attributes: [:methodology_id, :reason, :utility,  :pertinence, :relevance])
     end
 end
