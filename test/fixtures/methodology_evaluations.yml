@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  project: one
+  methodology: one
+  reason: MyText
+  utility: 1
+  pertinence: 1
+  relevance: 1
+
+two:
+  project: two
+  methodology: two
+  reason: MyText
+  utility: 1
+  pertinence: 1
+  relevance: 1
