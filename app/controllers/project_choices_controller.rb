@@ -25,11 +25,14 @@ class ProjectChoicesController < ApplicationController
   # POST /project_choices
   # POST /project_choices.json
   def create
+    
     @project_choice = ProjectChoice.new(project_choice_params)
     @project = Project.find(params[:project_id])
+    @project_choice.project_id = @project.id
+    #@project.build_project_choice(project_choice_params)
     respond_to do |format|
       if @project_choice.save
-        format.html { redirect_to @project_choice, notice: 'Project choice was successfully created.' }
+        format.html { redirect_to new_project_project_plannification_path(@project), notice: 'Project choice was successfully created.' }
         format.json { render :show, status: :created, location: @project_choice }
       else
         format.html { render :new }

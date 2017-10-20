@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171020093831) do
+ActiveRecord::Schema.define(version: 20171020151432) do
 
   create_table "methodologies", force: :cascade do |t|
     t.string "name"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20171020093831) do
     t.string "p3"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "project_id"
     t.index ["project_id"], name: "index_project_choices_on_project_id"
   end
 
