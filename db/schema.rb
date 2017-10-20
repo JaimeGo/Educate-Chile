@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171019013941) do
+ActiveRecord::Schema.define(version: 20171020093831) do
 
   create_table "methodologies", force: :cascade do |t|
     t.string "name"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20171019013941) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "project_connection_id"
+    t.string "comentary"
     t.index ["methodology_id"], name: "index_methodology_evaluations_on_methodology_id"
     t.index ["project_connection_id"], name: "index_methodology_evaluations_on_project_connection_id"
   end
@@ -42,6 +43,16 @@ ActiveRecord::Schema.define(version: 20171019013941) do
     t.datetime "updated_at", null: false
     t.index ["methodology_id"], name: "index_methodology_reviews_on_methodology_id"
     t.index ["user_id"], name: "index_methodology_reviews_on_user_id"
+  end
+
+  create_table "project_choices", force: :cascade do |t|
+    t.string "desicion"
+    t.string "p1"
+    t.string "p2"
+    t.string "p3"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_project_choices_on_project_id"
   end
 
   create_table "project_communications", force: :cascade do |t|
@@ -100,7 +111,7 @@ ActiveRecord::Schema.define(version: 20171019013941) do
     t.string "name"
     t.boolean "disponibility"
     t.text "comment"
-    t.integer "type"
+    t.integer "place"
     t.integer "project_planification_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
