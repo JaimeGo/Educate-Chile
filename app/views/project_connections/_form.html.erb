@@ -1,13 +1,15 @@
+<div class="center">
 <%= form_for([@project, @project.build_project_connection]) do |form| %>
 
   <div class="field">
-    <%= form.label :needs %>
+    <%= form.label :needs, "Necesidades" %>
     <%= form.text_field :needs, id: :project_connection_needs %>
   </div>
 
 
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Agregar", class:"btn btn-lg btn-custom"%>
   </div>
 <% end %>
+</div>
