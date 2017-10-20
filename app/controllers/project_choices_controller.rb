@@ -26,7 +26,7 @@ class ProjectChoicesController < ApplicationController
   # POST /project_choices.json
   def create
     @project_choice = ProjectChoice.new(project_choice_params)
-
+    @project = Project.find(params[:project_id])
     respond_to do |format|
       if @project_choice.save
         format.html { redirect_to @project_choice, notice: 'Project choice was successfully created.' }
@@ -42,6 +42,7 @@ class ProjectChoicesController < ApplicationController
   # PATCH/PUT /project_choices/1.json
   def update
     respond_to do |format|
+    @project = Project.find(params[:project_id])
       if @project_choice.update(project_choice_params)
         format.html { redirect_to @project_choice, notice: 'Project choice was successfully updated.' }
         format.json { render :show, status: :ok, location: @project_choice }
@@ -56,6 +57,7 @@ class ProjectChoicesController < ApplicationController
   # DELETE /project_choices/1.json
   def destroy
     @project_choice.destroy
+    @project = Project.find(params[:project_id])
     respond_to do |format|
       format.html { redirect_to project_choices_url, notice: 'Project choice was successfully destroyed.' }
       format.json { head :no_content }

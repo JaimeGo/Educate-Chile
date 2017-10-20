@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     resources :project_evaluations
     resources :project_implementations
     resources :project_reviews
-
+    resources :project_connections
     resources :methodologies
   end
 
