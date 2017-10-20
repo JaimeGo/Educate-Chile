@@ -1,4 +1,4 @@
-class ProjectImplementation < ApplicationRecord
+    class ProjectImplementation < ApplicationRecord
     belongs_to :project
 
     def ask(comment)
