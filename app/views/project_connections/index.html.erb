@@ -14,8 +14,8 @@
   <tbody>
     <% @project_connections.each do |project_connection| %>
       <tr>
-        <td><%= project_connection.questions %></td>
-        <td><%= project_connection.answers %></td>
+        <td></td>
+        <td></td>
         <td><%= link_to 'Show', project_connection %></td>
         <td><%= link_to 'Edit', edit_project_connection_path(project_connection) %></td>
         <td><%= link_to 'Destroy', project_connection, method: :delete, data: { confirm: 'Are you sure?' } %></td>

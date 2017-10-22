@@ -5,7 +5,6 @@
 <table>
   <thead>
     <tr>
-      <th>Desicion</th>
       <th>P1</th>
       <th>P2</th>
       <th>P3</th>
@@ -16,13 +15,9 @@
   <tbody>
     <% @project_choices.each do |project_choice| %>
       <tr>
-        <td><%= project_choice.desicion %></td>
         <td><%= project_choice.p1 %></td>
         <td><%= project_choice.p2 %></td>
         <td><%= project_choice.p3 %></td>
-        <td><%= link_to 'Show', project_choice %></td>
-        <td><%= link_to 'Edit', edit_project_choice_path(project_choice) %></td>
-        <td><%= link_to 'Destroy', project_choice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

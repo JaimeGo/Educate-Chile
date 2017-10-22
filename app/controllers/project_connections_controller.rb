@@ -43,7 +43,7 @@ class ProjectConnectionsController < ApplicationController
     respond_to do |format|
       if @project_connection.save
         puts "HECHO"
-        format.html { redirect_to current_user, notice: 'Project connection was successfully created.' }
+        format.html { redirect_to new_project_project_choice_path, notice: 'Project connection was successfully created.' }
         format.json { render :show, status: :created, location: @project_connection }
       else
         puts "ERROR"
