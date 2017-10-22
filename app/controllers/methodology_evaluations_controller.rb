@@ -7,7 +7,7 @@ class MethodologyEvaluationsController < ApplicationController
     @meth_eval.methodology = @methodology
     @meth_eval.save
 
-    redirect_to @project_connection
+    redirect_to current_user
   end
 
   def destroy
@@ -17,7 +17,7 @@ class MethodologyEvaluationsController < ApplicationController
   end
 
   private
-    def methodology_evaluations_params
-      params.require(:methodology_evaluations).permit(:reason, :utility, :pertinence, :relevance)
+    def methodology_evaluation_params
+      params.require(:methodology_evaluation).permit(:reason, :utility, :pertinence, :relevance)
     end
 end
