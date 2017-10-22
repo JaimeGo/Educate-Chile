@@ -19,10 +19,20 @@ revisada(s)?" %>
           <th>Relevancia</th>
         </tr>
       </thead>
-      <tbody class='fields'>
+      <tbody class='meteval1'>
         <%= form.fields_for :methodology_evaluation do |builder| %>
           <%= render 'methodology_evaluation', f: builder %>
         <% end %>
+      </tbody>
+      <tbody class='meteval2'>
+      <%= form.fields_for :methodology_evaluation do |builder| %>
+          <%= render 'methodology_evaluation', f: builder %>
+      <% end %>
+      </tbody>
+      <tbody class='meteval3'>
+      <%= form.fields_for :methodology_evaluation do |builder| %>
+          <%= render 'methodology_evaluation', f: builder %>
+      <% end %>
       </tbody>
     </table>
 
