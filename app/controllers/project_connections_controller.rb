@@ -15,6 +15,10 @@ class ProjectConnectionsController < ApplicationController
   # GET /project_connections/new
   def new
     @project = Project.find(params[:project_id])
+    @project_connection = ProjectConnection.new
+    @project_connection.methodology_evaluations.build
+
+
   end
 
   # GET /project_connections/1/edit
@@ -24,14 +28,27 @@ class ProjectConnectionsController < ApplicationController
   # POST /project_connections
   # POST /project_connections.json
   def create
-    @project = Project.find(params[:project_id])
-    @project_connection = @project.build_project_connection(project_connection_params)
+    puts "REQUIRE", params.require(:project_connection).inspect
 
+
+    puts "PARAMS",project_connection_params
+    @project = Project.find(params[:project_id])
+
+    
+    @project_connection = @project.build_project_connection(project_connection_params)
+    puts "PR_CONN", @project_connection
+    
+
+    puts @project_connection.inspect
+    puts @methodology_evaluation.inspect
+    puts "PERMIT", project_connection_params
     respond_to do |format|
       if @project_connection.save
+        puts "HECHO"
         format.html { redirect_to current_user, notice: 'Project connection was successfully created.' }
         format.json { render :show, status: :created, location: @project_connection }
       else
+        puts "ERROR"
         format.html { render :new }
         format.json { render json: @project_connection.errors, status: :unprocessable_entity }
       end
@@ -70,6 +87,17 @@ class ProjectConnectionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_connection_params
-      params.require(:project_connection).permit(:questions, :answers)
+      
+      normal_params=params.require(:project_connection).permit(
+        :needs, :ideas, methodology_evaluations_attributes: [:methodology_id, :reason, :utility, :pertinence, :relevance])
+      
+      
+      ret_par=normal_params.merge(:methodology_evaluations_attributes => [methodology_chosen: params[:project_connection][:methodology_evaluation]["methodology_chosen"],
+       reason: params["project_connection"]["methodology_evaluation"]["reason"].to_s,
+        utility: params["project_connection"]["methodology_evaluation"]["utility"].to_i,
+         pertinence: params["project_connection"]["methodology_evaluation"]["pertinence"].to_i,
+          relevance: params["project_connection"]["methodology_evaluation"]["relevance"].to_i])
+      puts "AQUIIIIIII", ret_par
+      ret_par
     end
 end
