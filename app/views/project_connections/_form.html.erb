@@ -6,8 +6,8 @@ tu escuela puede(n) ayudar a solucionar la(s) metodología(s)
 revisada(s)?" %>
     <%= form.text_area :needs, id: :project_connection_needs %>
   </div>
-
-  <h3> Metodologías </h3>
+  <br>
+  <p><strong> Escoja una metodología y lleve a cabo su evaluación</strong> </p>
     <table class='table'>
       <thead>
         <tr>
@@ -20,13 +20,13 @@ revisada(s)?" %>
         </tr>
       </thead>
       <tbody class='fields'>
-        <%= form.simple_fields_for :methodology_evaluation do |builder| %>
+        <%= form.fields_for :methodology_evaluation do |builder| %>
           <%= render 'methodology_evaluation', f: builder %>
         <% end %>
       </tbody>
     </table>
 
-
+  <br>
 
   <div class="field">
     <%= form.label "Con lo visto hasta el momento, ¿Qué ideas te surgen?,
@@ -34,7 +34,7 @@ revisada(s)?" %>
     <%= form.text_area :ideas, id: :project_connection_ideas %>
   </div>
 
-
+  <br>
   <div class="actions">
     <%= form.submit %>
   </div>
