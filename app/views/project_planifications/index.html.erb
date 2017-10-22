@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Project Planifications</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Place</th>
+      <th>Startdate</th>
+      <th>Finishdate</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @project_planifications.each do |project_planification| %>
+      <tr>
+        <td><%= project_planification.name %></td>
+        <td><%= project_planification.place %></td>
+        <td><%= project_planification.startdate %></td>
+        <td><%= project_planification.finishdate %></td>
+        <td><%= link_to 'Show', project_planification %></td>
+        <td><%= link_to 'Edit', edit_project_planification_path(project_planification) %></td>
+        <td><%= link_to 'Destroy', project_planification, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Project Planification', new_project_planification_path %>

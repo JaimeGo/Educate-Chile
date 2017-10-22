@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Methodologies</h1>
+<div class="container">
+<h1>Metodologías</h1>
 
    
     <% @methodologies.each do |methodology| %>
       
 
-      <div class="card col-md-6 text-center">
+      <div class="card col-md-6 text-left">
       <div class="classWithPad "  onclick="location.href='<%= methodology.link %>'"  >
         <div class="card-header">
           <h4><%= methodology.name %></h4>
@@ -20,3 +20,4 @@
       <br>
       
     <% end %>
+</div>

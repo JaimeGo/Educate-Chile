@@ -188,3 +188,20 @@ div.login {
   }
   
 }
+
+div.left {
+  float: left;
+  width: 50%;
+  text-align: center;
+  margin: 2px 10px;
+  display: inline;
+}
+
+div.right {
+  float: right;
+  width:40%;
+
+  text-align: left;
+  margin: 2px 10px;
+  display: inline;
+}
