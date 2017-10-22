@@ -90,7 +90,7 @@ class ProjectConnectionsController < ApplicationController
         :needs, :ideas, methodology_evaluations_attributes: [:methodology_id, :reason, :utility, :pertinence, :relevance])
 
 
-      ret_par=normal_params.merge(:methodology_evaluations_attributes => [methodology_chosen: params[:project_connection][:methodology_evaluation]["methodology_chosen"],
+      ret_par=normal_params.merge(:methodology_evaluations_attributes => [methodology_id: params[:project_connection][:methodology_evaluation]["methodology_id"],
        reason: params["project_connection"]["methodology_evaluation"]["reason"].to_s,
         utility: params["project_connection"]["methodology_evaluation"]["utility"].to_i,
          pertinence: params["project_connection"]["methodology_evaluation"]["pertinence"].to_i,

@@ -12,6 +12,12 @@ m1 = Methodology.new(
   link:                  'https://www.escuelaenmovimiento.cl/metodologias-innovadoras/cultura-de-aprendizaje-colaborativo'
 )
 m1.save!
+m2 = Methodology.new(
+  name:                  'Ambientes de Aprendizaje Auto-organizado',
+  description:           'Esta metodología propone un proceso en el cual los niños aprenden a hacer preguntas y a buscar ellos mismos las respuestas. Surgió de estudios que muestran que los niños pueden aprender casi cualquier cosa por sí solos. El punto es estimular su curiosidad. Los Ambientes de Aprendizaje Auto-organizado (AAA) se crean cuando los educadores y/o padres incitan, motivan e instan a los niños a trabajar como comunidad para responder sus propias preguntas significativas usando internet.',
+  link:                  'https://www.escuelaenmovimiento.cl/metodologias-innovadoras/ambientes-de-aprendizaje-auto-organizado'
+)
+m2.save!
 #
 # metologies_list = [
 #   [ "Cultura de aprendizaje colaborativo", "Esta metodología aborda una de las habilidades del siglo XXI que se consideran claves para un liderazgo efectivo y para el éxito personal y profesional: la colaboración. En las organizaciones, la colaboración no sólo se entiende como una forma de trabajo en torno a metas compartidas, sino que está orientada al logro de aprendizajes comunes que beneficien a todos los actores del sistema.", "https://www.escuelaenmovimiento.cl/metodologias-innovadoras/cultura-de-aprendizaje-colaborativo" ],
