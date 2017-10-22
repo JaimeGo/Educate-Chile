@@ -16,7 +16,7 @@
     <% @projects.each do |project| %>
       <tr>
         <td><%= project.name %></td>
-        <td><%= project.user.name + " " + project.user.last_name %></td>
+        <td><%= project.user.name %> <%= project.user.last_name %></td>
         <td><%= link_to 'Ver Detalles', project %></td>
 
       </tr>
