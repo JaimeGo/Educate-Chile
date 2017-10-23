@@ -4,9 +4,9 @@ class ProjectImplementationsController < ApplicationController
   # GET /project_implementations
   # GET /project_implementations.json
   def index
-    @project_implementations = ProjectImplementation.all
+    #@project_implementations = ProjectImplementation.all
     @project = Project.find(params[:project_id])
-    #@project_implementations = ProjectImplementation.find(params[:project_id])
+    @project_implementations = ProjectImplementation.where(project_id: params[:project_id])
   end
 
   # GET /project_implementations/1
