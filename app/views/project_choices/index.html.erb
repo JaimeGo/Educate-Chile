@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Project Choices</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>P1</th>
+      <th>P2</th>
+      <th>P3</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @project_choices.each do |project_choice| %>
+      <tr>
+        <td><%= project_choice.p1 %></td>
+        <td><%= project_choice.p2 %></td>
+        <td><%= project_choice.p3 %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

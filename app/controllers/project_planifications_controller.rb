@@ -15,6 +15,7 @@ class ProjectPlanificationsController < ApplicationController
   # GET /project_planifications/new
   def new
     @project_planification = ProjectPlanification.new
+    @project = Project.find(params[:project_id])
   end
 
   # GET /project_planifications/1/edit
@@ -25,6 +26,8 @@ class ProjectPlanificationsController < ApplicationController
   # POST /project_planifications.json
   def create
     @project_planification = ProjectPlanification.new(project_planification_params)
+    @project = Project.find(params[:project_id])
+    @project_planification.project_id = @project.id
 
     respond_to do |format|
       if @project_planification.save

@@ -1,4 +1,4 @@
-<%= simple_form_for(@project_planification) do |f| %>
+<%= simple_form_for([@project, @project_planification]) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -33,7 +33,7 @@
 
     <tbody class ="project_resources">
       <%= f.simple_fields_for :project_resources do |builder| %>
-      <%= render 'project_resource_fields', f: builder, locals: {tipo: 1} %>
+      <%= render partial: 'project_resource_fields', locals: {tipo: 1}, f: builder %>
       <% end %>
     </tbody>
   </table>
@@ -56,7 +56,7 @@
 
     <tbody class ="project_resources">
       <%= f.simple_fields_for :project_resources do |builder| %>
-      <%= render 'project_resource_fields', f: builder, locals: {tipo: 2} %>
+      <%= render partial: 'project_resource_fields', locals: {tipo: 2}, f: builder %>
       <% end %>
     </tbody>
   </table>
