@@ -51,6 +51,15 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+
+  # Brakeman detects security vulnerabilities in Ruby on Rails
+  # applications via static analysis.
+  gem 'brakeman', '~> 3.5.0', require: false
+  # A code metric tool for rails codes, written in Ruby.
+  gem 'rails_best_practices', '~> 1.18.0', require: false
+  # Automatic Ruby code style checking tool. Aims to enforce
+  # the community-driven Ruby Style Guide.
+  gem 'rubocop', '~> 0.48.1', require: false
 end
 
 group :development do
