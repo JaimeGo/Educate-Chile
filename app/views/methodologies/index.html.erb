@@ -1,23 +1,18 @@
 <p id="notice"><%= notice %></p>
-<div class="container">
-<h1>Metodologías</h1>
+<div class="container-fluid">
+  <h1>Metodologías</h1>
 
-   
+  <div class="row">
     <% @methodologies.each do |methodology| %>
-      
-
-      <div class="card col-md-6 text-left">
-      <div class="classWithPad "  onclick="location.href='<%= methodology.link %>'"  >
-        <div class="card-header">
-          <h4><%= methodology.name %></h4>
-        </div>
-
-        <div class="card-block">
-          <p><%= methodology.description %></p>
+      <div class="col-sm-6" onclick=>
+        <div class="card">
+          <div class="card-block">
+            <h4 class="card-title"><%= methodology.name %></h4>
+            <p class="card-text"><%= methodology.description %></p>
+            <a href='<%= methodology.link %>' class="btn btn-primary">Ver</a>
+          </div>
         </div>
       </div>
-      </div>
-      <br>
-      
     <% end %>
+  </div>
 </div>
