@@ -4,31 +4,38 @@ class ProjectImplementationsController < ApplicationController
   # GET /project_implementations
   # GET /project_implementations.json
   def index
-    @project_implementations = ProjectImplementation.all
+    #@project_implementations = ProjectImplementation.all
+    @project = Project.find(params[:project_id])
+    @project_implementations = ProjectImplementation.where(project_id: params[:project_id])
   end
 
   # GET /project_implementations/1
   # GET /project_implementations/1.json
   def show
+    @project = Project.find(params[:project_id])
   end
 
   # GET /project_implementations/new
   def new
     @project_implementation = ProjectImplementation.new
+    @project = Project.find(params[:project_id])
+    @project_implementation.project_id = @project.id
   end
 
   # GET /project_implementations/1/edit
   def edit
+    @project = Project.find(params[:project_id])
   end
 
   # POST /project_implementations
   # POST /project_implementations.json
   def create
     @project_implementation = ProjectImplementation.new(project_implementation_params)
-
+    @project = Project.find(params[:project_id])
+    @project_implementation.project_id = @project.id
     respond_to do |format|
       if @project_implementation.save
-        format.html { redirect_to @project_implementation, notice: 'Project implementation was successfully created.' }
+        format.html { redirect_to current_user, notice: 'Project implementation was successfully created.' }
         format.json { render :show, status: :created, location: @project_implementation }
       else
         format.html { render :new }
@@ -42,7 +49,7 @@ class ProjectImplementationsController < ApplicationController
   def update
     respond_to do |format|
       if @project_implementation.update(project_implementation_params)
-        format.html { redirect_to @project_implementation, notice: 'Project implementation was successfully updated.' }
+        format.html { redirect_to current_user, notice: 'Project implementation was successfully updated.' }
         format.json { render :show, status: :ok, location: @project_implementation }
       else
         format.html { render :edit }
@@ -69,6 +76,6 @@ class ProjectImplementationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_implementation_params
-      params.require(:project_implementation).permit(:questions, :answers)
+      params.require(:project_implementation).permit(:day, :observations, :advances, :conflicts, :new_ideas)
     end
 end

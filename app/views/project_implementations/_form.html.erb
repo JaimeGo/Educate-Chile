@@ -1,25 +1,32 @@
-<%= form_with(model: project_implementation, local: true) do |form| %>
-  <% if project_implementation.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(project_implementation.errors.count, "error") %> prohibited this project_implementation from being saved:</h2>
+<%= simple_form_for([@project, @project_implementation]) do |form| %>
 
-      <ul>
-      <% project_implementation.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <div class="field">
-    <%= form.label :questions %>
-    <%= form.text_field :questions, id: :project_implementation_questions %>
+    <%= form.label :day %>
+    <%= form.date_field :day, id: :project_implementation_day %>
   </div>
 
   <div class="field">
-    <%= form.label :answers %>
-    <%= form.text_field :answers, id: :project_implementation_answers %>
+    <%= form.label :observations %>
+    <%= form.text_field :observations, id: :project_implementation_observations %>
   </div>
+
+  <div class="field">
+    <%= form.label :advances %>
+    <%= form.text_field :advances, id: :project_implementation_advances %>
+  </div>
+
+  <div class="field">
+    <%= form.label :conflicts %>
+    <%= form.text_field :conflicts, id: :project_implementation_conflicts %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :new_ideas %>
+    <%= form.text_field :new_ideas, id: :project_implementation_new_ideas %>
+  </div>
+
 
   <div class="actions">
     <%= form.submit %>
