@@ -5,11 +5,14 @@ class ProjectImplementationsController < ApplicationController
   # GET /project_implementations.json
   def index
     @project_implementations = ProjectImplementation.all
+    @project = Project.find(params[:project_id])
+    #@project_implementations = ProjectImplementation.find(params[:project_id])
   end
 
   # GET /project_implementations/1
   # GET /project_implementations/1.json
   def show
+    @project = Project.find(params[:project_id])
   end
 
   # GET /project_implementations/new
@@ -21,6 +24,7 @@ class ProjectImplementationsController < ApplicationController
 
   # GET /project_implementations/1/edit
   def edit
+    @project = Project.find(params[:project_id])
   end
 
   # POST /project_implementations

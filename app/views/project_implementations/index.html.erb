@@ -25,9 +25,9 @@ day:date observations:text advances:text conflicts:text new_ideas:text
         <td><%= project_implementation.advances %></td>
         <td><%= project_implementation.conflicts %></td>
         <td><%= project_implementation.new_ideas %></td>
-        <td>< # Son nested link_to 'Show', project_implementation ></td>
-        <td>< # Son nested link_to 'Edit', edit_project_implementation_path(project_implementation) ></td>
-        <td>< # Son nested link_to 'Destroy', project_implementation, method: :delete, data: { confirm: 'Are you sure?' } ></td>
+        <td><%= link_to 'Show', project_project_implementation_path(@project,project_implementation)  %></td>
+        <td><%=link_to 'Edit', edit_project_project_implementation_path(@project,project_implementation) %></td>
+        <td> </td>
       </tr>
     <% end %>
   </tbody>
