@@ -15,6 +15,8 @@ class ProjectImplementationsController < ApplicationController
   # GET /project_implementations/new
   def new
     @project_implementation = ProjectImplementation.new
+    @project = Project.find(params[:project_id])
+    @project_implementation.project_id = @project.id
   end
 
   # GET /project_implementations/1/edit
@@ -25,7 +27,8 @@ class ProjectImplementationsController < ApplicationController
   # POST /project_implementations.json
   def create
     @project_implementation = ProjectImplementation.new(project_implementation_params)
-
+    @project = Project.find(params[:project_id])
+    @project_implementation.project_id = @project.id
     respond_to do |format|
       if @project_implementation.save
         format.html { redirect_to @project_implementation, notice: 'Project implementation was successfully created.' }
@@ -69,6 +72,6 @@ class ProjectImplementationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_implementation_params
-      params.require(:project_implementation).permit(:questions, :answers)
+      params.require(:project_implementation).permit(:day, :observations, :advances, :conflicts, :new_ideas)
     end
 end
