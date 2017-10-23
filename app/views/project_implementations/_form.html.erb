@@ -1,9 +1,9 @@
-<%= simple_form_for([@project, @project.build_project_implementation]) do |form| %>
+<%= simple_form_for([@project, @project_implementation]) do |form| %>
 
 
   <div class="field">
     <%= form.label :day %>
-    <%= form.date :day, id: :project_implementation_day %>
+    <%= form.date_field :day, id: :project_implementation_day %>
   </div>
 
   <div class="field">

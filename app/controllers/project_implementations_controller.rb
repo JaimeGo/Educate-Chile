@@ -31,7 +31,7 @@ class ProjectImplementationsController < ApplicationController
     @project_implementation.project_id = @project.id
     respond_to do |format|
       if @project_implementation.save
-        format.html { redirect_to @project_implementation, notice: 'Project implementation was successfully created.' }
+        format.html { redirect_to current_user, notice: 'Project implementation was successfully created.' }
         format.json { render :show, status: :created, location: @project_implementation }
       else
         format.html { render :new }
@@ -45,7 +45,7 @@ class ProjectImplementationsController < ApplicationController
   def update
     respond_to do |format|
       if @project_implementation.update(project_implementation_params)
-        format.html { redirect_to @project_implementation, notice: 'Project implementation was successfully updated.' }
+        format.html { redirect_to current_user, notice: 'Project implementation was successfully updated.' }
         format.json { render :show, status: :ok, location: @project_implementation }
       else
         format.html { render :edit }
