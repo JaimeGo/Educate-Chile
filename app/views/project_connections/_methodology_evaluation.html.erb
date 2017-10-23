@@ -3,8 +3,28 @@
 
   </td>
   <td><%= f.select :methodology_chosen, ['Elige una metodología...'] | Methodology.all.map { |m| [m.name, "#{m.id}"] }%></td>
-  <td><%= f.text_field :reason, label: false%></td>
-  <td><%= f.select :utility, [1, 2, 3, 4, 5]%></td>
-  <td><%= f.select :pertinence, [1, 2, 3, 4, 5]%></td>
-  <td><%= f.select :relevance, [1, 2, 3, 4, 5]%></td>
+  <td><%= f.text_field :reason_1, label: false%></td>
+  <td><%= f.select :utility_1, [1, 2, 3, 4, 5]%></td>
+  <td><%= f.select :pertinence_1, [1, 2, 3, 4, 5]%></td>
+  <td><%= f.select :relevance_1, [1, 2, 3, 4, 5]%></td>
+</tr>
+<tr>
+	<td>
+
+  </td>
+  <td><%= f.select :methodology_chosen, ['Elige una metodología...'] | Methodology.all.map { |m| [m.name, "#{m.id}"] }%></td>
+  <td><%= f.text_field :reason_2, label: false%></td>
+  <td><%= f.select :utility_2, [1, 2, 3, 4, 5]%></td>
+  <td><%= f.select :pertinence_2, [1, 2, 3, 4, 5]%></td>
+  <td><%= f.select :relevance_2, [1, 2, 3, 4, 5]%></td>
+  </tr>
+  <tr>
+  	<td>
+
+  </td>
+  <td><%= f.select :methodology_chosen, ['Elige una metodología...'] | Methodology.all.map { |m| [m.name, "#{m.id}"] }%></td>
+  <td><%= f.text_field :reason_3, label: false%></td>
+  <td><%= f.select :utility_3, [1, 2, 3, 4, 5]%></td>
+  <td><%= f.select :pertinence_3, [1, 2, 3, 4, 5]%></td>
+  <td><%= f.select :relevance_3, [1, 2, 3, 4, 5]%></td>
 </tr>

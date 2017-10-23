@@ -22,14 +22,24 @@ ActiveRecord::Schema.define(version: 20171022115906) do
 
   create_table "methodology_evaluations", force: :cascade do |t|
     t.integer "methodology_id"
-    t.text "reason"
-    t.integer "utility"
-    t.integer "pertinence"
-    t.integer "relevance"
+    t.text "reason_1"
+    t.integer "utility_1"
+    t.integer "pertinence_1"
+    t.integer "relevance_1"
+    t.text "reason_2"
+    t.integer "utility_2"
+    t.integer "pertinence_2"
+    t.integer "relevance_2"
+    t.text "reason_3"
+    t.integer "utility_3"
+    t.integer "pertinence_3"
+    t.integer "relevance_3"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "project_connection_id"
-    t.text "methodology_chosen"
+    t.text "methodology_chosen_1"
+    t.text "methodology_chosen_2"
+    t.text "methodology_chosen_3"
     t.index ["methodology_id"], name: "index_methodology_evaluations_on_methodology_id"
     t.index ["project_connection_id"], name: "index_methodology_evaluations_on_project_connection_id"
   end

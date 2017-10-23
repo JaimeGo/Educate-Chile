@@ -92,12 +92,28 @@ class ProjectConnectionsController < ApplicationController
         :needs, :ideas, methodology_evaluations_attributes: [:methodology_id, :reason, :utility, :pertinence, :relevance])
       
       
-      ret_par=normal_params.merge(:methodology_evaluations_attributes => [methodology_chosen: params[:project_connection][:methodology_evaluation]["methodology_chosen"],
-       reason: params["project_connection"]["methodology_evaluation"]["reason"].to_s,
-        utility: params["project_connection"]["methodology_evaluation"]["utility"].to_i,
-         pertinence: params["project_connection"]["methodology_evaluation"]["pertinence"].to_i,
-          relevance: params["project_connection"]["methodology_evaluation"]["relevance"].to_i])
-      puts "AQUIIIIIII", ret_par
+      ret_par=normal_params.merge(:methodology_evaluations_attributes => [methodology_chosen_1: params[:project_connection][:methodology_evaluation]["methodology_chosen"],
+       reason_1: params["project_connection"]["methodology_evaluation"]["reason"].to_s,
+        utility_1: params["project_connection"]["methodology_evaluation"]["utility"].to_i,
+         pertinence_1: params["project_connection"]["methodology_evaluation"]["pertinence"].to_i,
+          relevance_1: params["project_connection"]["methodology_evaluation"]["relevance"].to_i,
+
+          methodology_chosen_2: params[:project_connection][:methodology_evaluation]["methodology_chosen"],
+       reason_2: params["project_connection"]["methodology_evaluation"]["reason"].to_s,
+        utility_2: params["project_connection"]["methodology_evaluation"]["utility"].to_i,
+         pertinence_2: params["project_connection"]["methodology_evaluation"]["pertinence"].to_i,
+          relevance_2: params["project_connection"]["methodology_evaluation"]["relevance"].to_i,
+
+          methodology_chosen_3: params[:project_connection][:methodology_evaluation]["methodology_chosen"],
+       reason_3: params["project_connection"]["methodology_evaluation"]["reason"].to_s,
+        utility_3: params["project_connection"]["methodology_evaluation"]["utility"].to_i,
+         pertinence_3: params["project_connection"]["methodology_evaluation"]["pertinence"].to_i,
+          relevance_3: params["project_connection"]["methodology_evaluation"]["relevance"].to_i
+
+
+
+          ])
+      
       ret_par
     end
 end
