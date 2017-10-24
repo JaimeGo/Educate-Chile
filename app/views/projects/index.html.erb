@@ -16,7 +16,7 @@
     <% @projects.each do |project| %>
       <tr>
         <td><%= project.name %></td>
-        <td><%= project.user.name %> <%= project.user.last_name %></td>
+        <td><%= project.user.email %></td>
         <td><%= link_to 'Ver Detalles', project %></td>
 
       </tr>
@@ -26,6 +26,8 @@
 
 <br>
 <div class="center">
-<%= link_to 'Crear nuevo proyecto', new_project_path %>
+  <% if user_signed_in?%>
+    <%= link_to 'Crear nuevo proyecto', new_project_path %>
+  <%end%>
 </div>
 </div>
