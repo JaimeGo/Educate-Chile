@@ -1,7 +1,7 @@
 <div class="center jumbotron">
     <% if user_signed_in? %>
-    <h1 style="font-size: 40px;">Bienvenido, <%= current_user.name %> <%= current_user.last_name %></h1>
-      No eres <%= current_user.name%>? <%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete%>
+    <h1 style="font-size: 40px;">Bienvenido</h1>
+      <%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete%>
 <% else %>
   <%= yield %>
     <h1>Bienvenido a EducarChile App</h1>
