@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @project_planification.name %>
+</p>
+
+<p>
+  <strong>Place:</strong>
+  <%= @project_planification.place %>
+</p>
+
+<p>
+  <strong>Startdate:</strong>
+  <%= @project_planification.startdate %>
+</p>
+
+<p>
+  <strong>Finishdate:</strong>
+  <%= @project_planification.finishdate %>
+</p>
+
+
+<%= link_to 'Edit', edit_project_planification_path(@project_planification) %> |
+<%= link_to 'Back', project_planifications_path %>

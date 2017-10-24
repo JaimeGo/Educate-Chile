@@ -1,0 +1,63 @@
+
+<table class='table'>
+  <thead>
+    <tr>
+      <th>Metodologia</th>
+      <th>Comentarios Generales</th>
+      <th>Utilidad</th>
+      <th>Pertinencia</th>
+      <th>Relevancia</th>
+      <th> Puntaje </th>
+    </tr>
+  </thead>
+  <tbody class='fields'>
+    <tr>
+      <% @project.project_connection.methodology_evaluations.each do |mev| %>
+        <td><%=mev.methodology.name%></td>
+        <td><%=mev.reason%></td>
+        <td><%=mev.utility%></td>
+        <td><%=mev.pertinence%></td>
+        <td><%=mev.relevance%></td>
+        <td><%=mev.utility + mev.relevance + mev.pertinence%></td>
+      <% end %>
+    </tr>
+  </tbody>
+</table>
+
+<%= form_for [@project, @project_choice]  do |form| %>
+  <% if project_choice.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(project_choice.errors.count, "error") %> prohibited this project_choice from being saved:</h2>
+
+      <ul>
+      <% project_choice.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :methodology_id, "Elige la metodolgia a implementar:" %><br>
+    <%= form.select :methodology_id, @project.project_connection.methodology_evaluations.map {|x| [x.methodology.name, "#{x.methodology.id}"] } %>
+  </div>
+
+  <div class="field">
+    <%= form.label :p1 %>
+    <%= form.text_area :p1, id: :project_choice_p1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :p2 %>
+    <%= form.text_area :p2, id: :project_choice_p2 %>
+  </div>
+
+    <div class="field">
+    <%= form.label :p3 %>
+    <%= form.text_area :p3, id: :project_choice_p3 %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

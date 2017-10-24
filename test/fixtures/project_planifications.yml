@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  place: MyString
+  startdate: 2017-10-18 22:16:17
+  finishdate: 2017-10-18 22:16:17
+  references: 
+
+two:
+  name: MyString
+  place: MyString
+  startdate: 2017-10-18 22:16:17
+  finishdate: 2017-10-18 22:16:17
+  references: 

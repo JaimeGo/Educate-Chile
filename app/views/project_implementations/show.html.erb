@@ -1,14 +1,29 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Questions:</strong>
-  <%= @project_implementation.questions %>
+  <strong>Dia:</strong>
+  <%= @project_implementation.day %>
 </p>
 
 <p>
-  <strong>Answers:</strong>
-  <%= @project_implementation.answers %>
+  <strong>observaciones:</strong>
+  <%= @project_implementation.observations %>
 </p>
 
-<%= link_to 'Edit', edit_project_implementation_path(@project_implementation) %> |
-<%= link_to 'Back', project_implementations_path %>
+<p>
+  <strong>Avances:</strong>
+  <%= @project_implementation.advances %>
+</p>
+
+<p>
+  <strong>Obstaculos:</strong>
+  <%= @project_implementation.conflicts %>
+</p>
+
+<p>
+  <strong>Nuevas ideas:</strong>
+  <%= @project_implementation.new_ideas %>
+</p>
+
+<%= link_to 'Edit', edit_project_project_implementation_path %> |
+<%= link_to 'Back', project_project_implementation_path %>
