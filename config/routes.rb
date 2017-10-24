@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :project_planifications
   root 'static_pages#home'
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
@@ -11,11 +10,12 @@ Rails.application.routes.draw do
     resources :project_connections do
       resources :methodology_evaluations
     end
+    resources :project_choices
+    resources :project_planifications
     resources :project_communications
     resources :project_evaluations
     resources :project_implementations
     resources :project_reviews
-
     resources :methodologies
   end
 

@@ -1,3 +1,4 @@
+<div class="center">
 <%= simple_form_for([@project, @project.build_project_connection]) do |form| %>
 
   <div class="field">
@@ -22,16 +23,6 @@ revisada(s)?" %>
         <%= form.fields_for :methodology_evaluation do |builder| %>
           <%= render 'methodology_evaluation', f: builder %>
         <% end %>
-      </tbody>
-      <tbody class='meteval2'>
-      <%= form.fields_for :methodology_evaluation do |builder| %>
-          <%= render 'methodology_evaluation', f: builder %>
-      <% end %>
-      </tbody>
-      <tbody class='meteval3'>
-      <%= form.fields_for :methodology_evaluation do |builder| %>
-          <%= render 'methodology_evaluation', f: builder %>
-      <% end %>
       </tbody>
     </table>
 

@@ -15,6 +15,7 @@ class ProjectPlanificationsController < ApplicationController
   # GET /project_planifications/new
   def new
     @project_planification = ProjectPlanification.new
+    @project = Project.find(params[:project_id])
   end
 
   # GET /project_planifications/1/edit
@@ -25,10 +26,12 @@ class ProjectPlanificationsController < ApplicationController
   # POST /project_planifications.json
   def create
     @project_planification = ProjectPlanification.new(project_planification_params)
+    @project = Project.find(params[:project_id])
+    @project_planification.project_id = @project.id
 
     respond_to do |format|
       if @project_planification.save
-        format.html { redirect_to @project_planification, notice: 'Project planification was successfully created.' }
+        format.html { redirect_to new_project_project_implementation_path, notice: 'Project planification was successfully created.' }
         format.json { render :show, status: :created, location: @project_planification }
       else
         format.html { render :new }
