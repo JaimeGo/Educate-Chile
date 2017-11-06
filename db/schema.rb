@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(version: 20171023010928) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "project_connection_id"
-    t.string "comentary"
     t.text "methodology_chosen"
+    t.string "comentary"
     t.index ["methodology_id"], name: "index_methodology_evaluations_on_methodology_id"
     t.index ["project_connection_id"], name: "index_methodology_evaluations_on_project_connection_id"
   end
