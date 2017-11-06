@@ -1,5 +1,5 @@
 <tr>
-  <td><%= f.select :methodology_chosen,
+  <td><%= f.select :methodology_id,
                    ['Elige una metodología...'] | Methodology.all.map { |m| [m.name, "#{m.id}"] },
                    {}, {autofocus: 'true', class: 'form-control'}%></td>
 
