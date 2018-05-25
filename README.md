@@ -19,4 +19,4 @@ The purpose of the app is to teach school teachers to implement new approaches t
 
 It also supports standard functionality like registration and login, notifications, etc.
 
- - **Code standar**: https://github.com/bbatsov/ruby-style-guide
+ Code standar: https://github.com/bbatsov/ruby-style-guide
