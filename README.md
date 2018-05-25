@@ -21,7 +21,7 @@ It also supports standard functionality like registration and login, notificatio
 
  Code standar: https://github.com/bbatsov/ruby-style-guide
 
-# Screenshots
+### Screenshots
 
 ![](screenshot1.png)
 
