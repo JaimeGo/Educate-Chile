@@ -7,11 +7,11 @@ This app was developed in Ruby on Rails with Sqlite 3 for the course Detailed So
 
 It was created with agile methodologies in colaboration with other students. These are their Github usernames:
 
--caackermann-
--cjsalame
--LeFranck
--noksenberg
--gdburky
+*caackermann
+*cjsalame
+*LeFranck
+*noksenberg
+*gdburky
 
 The original repository is https://github.com/caackermann/dds
 
