@@ -1,11 +1,22 @@
 
-## Educar Chile ##
+## Educate Chile ##
 
-Repositorio de la aplicación desarrollada para el curso Diseño Detallado de Software.
+Available at Heroku: https://educate-chile-jaimego.herokuapp.com/
 
- - **Framework de la aplicación web**: Ruby on Rails. 
-La elección del framework Rails fue realizada en base a sus variados beneficios: ayuda a desarrolladores a construir páginas y aplicaciones web al abstraer y simplificar tareas repetitivas. Rails incluye una serie de convenciones que ayudan a acelerar el proceso de desarrollo. Además, pone énfasis en el desarrollo de aplicaciones RESTful,  un diseño de arquitectura de software en base a la relación cliente-servidor, e incentiva una estructura lógica en las aplicaciones. Por último, la comunidad de Ruby on Rails incentiva el desarrollo ágil. 
- - **Sistema de control de versiones**: GitHub
-Se ocupará GitHub ya que entrega numerosos beneficios, entre los cuales destacan: facilidad de colaboración con distintos programadores de un mismo proyecto y habilidad para poder observar versiones antiguas de la aplicación. 
- - **Estándar de codificación**: https://github.com/bbatsov/ruby-style-guide
-A diferencia de otros lenguajes, Ruby no tiene una referencia de estilo de programación (como Python y PEP-8). Por lo tanto, la comunidad de programadores decidieron crear una guía para que sirva como referencia de estilo y mejores prácticas.
+This app was developed in Ruby on Rails with Sqlite 3 for the course Detailed Software Design, at Pontificia Universidad Católica. 
+
+It was created with agile methodologies in colaboration with other students. These are their Github usernames:
+
+-caackermann
+-cjsalame
+-LeFranck
+-noksenberg
+-gdburky
+
+The original repository is https://github.com/caackermann/dds
+
+The purpose of the app is to teach school teachers to implement new approaches to further innovation in education. It was used as a starting point for the development of the corresponding area of the existing platform Educar Chile (http://www.educarchile.cl/) which features numerous resources for teachers across Chile.
+
+It also supports standard functionality like registration and login, notifications, etc.
+
+ - **Code standar**: https://github.com/bbatsov/ruby-style-guide
