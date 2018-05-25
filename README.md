@@ -7,7 +7,7 @@ This app was developed in Ruby on Rails with Sqlite 3 for the course Detailed So
 
 It was created with agile methodologies in colaboration with other students. These are their Github usernames:
 
--caackermann
+-caackermann-
 -cjsalame
 -LeFranck
 -noksenberg
