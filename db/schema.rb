@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20171023010928) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "methodologies", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -21,14 +24,14 @@ ActiveRecord::Schema.define(version: 20171023010928) do
   end
 
   create_table "methodology_evaluations", force: :cascade do |t|
-    t.integer "methodology_id"
+    t.bigint "methodology_id"
     t.text "reason"
     t.integer "utility"
     t.integer "pertinence"
     t.integer "relevance"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "project_connection_id"
+    t.bigint "project_connection_id"
     t.string "comentary"
     t.text "methodology_chosen"
     t.index ["methodology_id"], name: "index_methodology_evaluations_on_methodology_id"
@@ -38,8 +41,8 @@ ActiveRecord::Schema.define(version: 20171023010928) do
   create_table "methodology_reviews", force: :cascade do |t|
     t.integer "stars"
     t.string "description"
-    t.integer "user_id"
-    t.integer "methodology_id"
+    t.bigint "user_id"
+    t.bigint "methodology_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["methodology_id"], name: "index_methodology_reviews_on_methodology_id"
@@ -53,7 +56,7 @@ ActiveRecord::Schema.define(version: 20171023010928) do
     t.string "p3"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "project_id"
+    t.bigint "project_id"
     t.index ["project_id"], name: "index_project_choices_on_project_id"
   end
 
@@ -69,7 +72,7 @@ ActiveRecord::Schema.define(version: 20171023010928) do
     t.datetime "updated_at", null: false
     t.text "needs"
     t.text "ideas"
-    t.integer "project_id"
+    t.bigint "project_id"
     t.index ["project_id"], name: "index_project_connections_on_project_id"
   end
 
@@ -78,7 +81,7 @@ ActiveRecord::Schema.define(version: 20171023010928) do
     t.text "audience"
     t.text "channel"
     t.text "object"
-    t.integer "project_planification_id"
+    t.bigint "project_planification_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["project_planification_id"], name: "index_project_diffusions_on_project_planification_id"
@@ -99,7 +102,7 @@ ActiveRecord::Schema.define(version: 20171023010928) do
     t.text "advances"
     t.text "conflicts"
     t.text "new_ideas"
-    t.integer "project_id"
+    t.bigint "project_id"
     t.index ["project_id"], name: "index_project_implementations_on_project_id"
   end
 
@@ -108,7 +111,7 @@ ActiveRecord::Schema.define(version: 20171023010928) do
     t.string "place"
     t.datetime "startdate"
     t.datetime "finishdate"
-    t.integer "project_id"
+    t.bigint "project_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["project_id"], name: "index_project_planifications_on_project_id"
@@ -119,7 +122,7 @@ ActiveRecord::Schema.define(version: 20171023010928) do
     t.boolean "disponibility"
     t.text "comment"
     t.integer "place"
-    t.integer "project_planification_id"
+    t.bigint "project_planification_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["project_planification_id"], name: "index_project_resources_on_project_planification_id"
@@ -128,8 +131,8 @@ ActiveRecord::Schema.define(version: 20171023010928) do
   create_table "project_reviews", force: :cascade do |t|
     t.integer "stars"
     t.string "description"
-    t.integer "user_id"
-    t.integer "project_id"
+    t.bigint "user_id"
+    t.bigint "project_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["project_id"], name: "index_project_reviews_on_project_id"
@@ -138,7 +141,7 @@ ActiveRecord::Schema.define(version: 20171023010928) do
 
   create_table "projects", force: :cascade do |t|
     t.string "name"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_projects_on_user_id"
@@ -164,4 +167,17 @@ ActiveRecord::Schema.define(version: 20171023010928) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "methodology_evaluations", "methodologies"
+  add_foreign_key "methodology_evaluations", "project_connections"
+  add_foreign_key "methodology_reviews", "methodologies"
+  add_foreign_key "methodology_reviews", "users"
+  add_foreign_key "project_choices", "projects"
+  add_foreign_key "project_connections", "projects"
+  add_foreign_key "project_diffusions", "project_planifications"
+  add_foreign_key "project_implementations", "projects"
+  add_foreign_key "project_planifications", "projects"
+  add_foreign_key "project_resources", "project_planifications"
+  add_foreign_key "project_reviews", "projects"
+  add_foreign_key "project_reviews", "users"
+  add_foreign_key "projects", "users"
 end
