@@ -3,7 +3,7 @@
 
 Available at Heroku: https://educate-chile-jaimego.herokuapp.com/
 
-This app was developed in Ruby on Rails with Sqlite 3 for the course Detailed Software Design, at Pontificia Universidad Católica. 
+This app was developed in Ruby on Rails with Postgresql for the course Detailed Software Design, at Pontificia Universidad Católica. 
 
 It was created with agile methodologies in colaboration with other students. These are their Github usernames:
 
